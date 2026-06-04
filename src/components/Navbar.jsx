@@ -1,6 +1,15 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import {
+  Link,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
+
+import {
+  motion,
+  AnimatePresence,
+} from "framer-motion";
+
 import {
   HiOutlineMenuAlt3,
   HiOutlineX,
@@ -8,7 +17,9 @@ import {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -16,8 +27,31 @@ const Navbar = () => {
     { name: "Internships", path: "/internships" },
     { name: "Training", path: "/training" },
     { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
   ];
+
+  const scrollToContact = () => {
+    setIsOpen(false);
+
+    if (location.pathname !== "/") {
+      navigate("/");
+
+      setTimeout(() => {
+        document
+          .getElementById("contact")
+          ?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+      }, 300);
+    } else {
+      document
+        .getElementById("contact")
+        ?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+    }
+  };
 
   return (
     <motion.header
@@ -95,9 +129,7 @@ const Navbar = () => {
                 `}
               >
                 <motion.span
-                  whileHover={{
-                    y: -2,
-                  }}
+                  whileHover={{ y: -2 }}
                   className="inline-block"
                 >
                   {link.name}
@@ -122,6 +154,44 @@ const Navbar = () => {
               </Link>
             </motion.div>
           ))}
+
+          {/* CONTACT BUTTON */}
+
+          <motion.button
+            onClick={scrollToContact}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.8,
+              duration: 0.4,
+            }}
+            whileHover={{ y: -2 }}
+            className="
+              relative
+              font-medium
+              text-gray-700
+              hover:text-orange-500
+              transition-all
+              duration-300
+              group
+            "
+          >
+            Contact
+
+            <span
+              className="
+                absolute
+                left-0
+                -bottom-2
+                h-[2px]
+                bg-orange-500
+                transition-all
+                duration-300
+                w-0
+                group-hover:w-full
+              "
+            />
+          </motion.button>
 
         </div>
 
@@ -192,6 +262,30 @@ const Navbar = () => {
                   </Link>
                 </motion.div>
               ))}
+
+              <motion.button
+                initial={{
+                  opacity: 0,
+                  x: -20,
+                }}
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                }}
+                transition={{
+                  delay: 0.3,
+                }}
+                onClick={scrollToContact}
+                className="
+                  text-left
+                  font-medium
+                  text-gray-700
+                  hover:text-orange-500
+                  transition-colors
+                "
+              >
+                Contact
+              </motion.button>
 
             </div>
           </motion.div>

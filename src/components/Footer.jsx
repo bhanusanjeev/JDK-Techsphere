@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { HashLink } from "react-router-hash-link";
 import {
   FaInstagram,
   FaLinkedinIn,
@@ -36,29 +37,29 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-6">
 
              <motion.div
-  whileHover={{
-    scale: 1.08,
-    rotate: 5,
-  }}
-  transition={{
-    type: "spring",
-    stiffness: 300,
-  }}
-  className="
-    w-12
-    h-12
-    bg-orange-500
-    rounded-xl
-    flex
-    items-center
-    justify-center
-    text-white
-    font-bold
-    text-xl
-  "
->
-  J
-</motion.div>
+                    whileHover={{
+                        scale: 1.08,
+                        rotate: 5,
+                    }}
+                    transition={{
+                        type: "spring",
+                        stiffness: 300,
+                    }}
+                    className="
+                        w-12
+                        h-12
+                        bg-orange-500
+                        rounded-xl
+                        flex
+                        items-center
+                        justify-center
+                        text-white
+                        font-bold
+                        text-xl
+                    "
+                    >
+                    J
+            </motion.div>
 
               <h2 className="text-2xl font-bold text-black">
                 JDKTechsphere
@@ -98,10 +99,13 @@ const Footer = () => {
     About
   </a>
 
-  <a href="/contact" className="hover:text-orange-500 hover:translate-x-2 transition-all duration-300 inline-block">
-    Contact
-  </a>
-
+ <HashLink
+  smooth
+  to="/#contact"
+  className="hover:text-orange-500 hover:translate-x-2 transition-all duration-300 inline-block"
+>
+  Contact
+</HashLink>
 </div>
           {/* RIGHT */}
 
@@ -161,12 +165,12 @@ const Footer = () => {
         {/* DIVIDER */}
 
        <motion.div
-  initial={{ scaleX: 0 }}
-  whileInView={{ scaleX: 1 }}
-  viewport={{ once: true }}
-  transition={{ duration: 1 }}
-  className="h-px bg-orange-100 my-12 origin-center"
-/>
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+                className="h-px bg-orange-100 my-12 origin-center"
+                />
 
         {/* BOTTOM */}
 

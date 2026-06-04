@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   HiOutlineBriefcase,
   HiOutlineAcademicCap,
@@ -7,7 +8,6 @@ import {
   HiOutlineChartBar,
   HiOutlineLightBulb,
 } from "react-icons/hi";
-
 const services = [
   {
     icon: <HiOutlineOfficeBuilding size={28} />,
@@ -15,6 +15,7 @@ const services = [
     title: "Consultancy",
     description:
       "Helping organizations hire the right talent through strategic workforce solutions and expert consulting.",
+    link: "/consultancy",
   },
   {
     icon: <HiOutlineBriefcase size={28} />,
@@ -22,6 +23,7 @@ const services = [
     title: "Internships",
     description:
       "Industry-focused internship opportunities that provide students with practical experience.",
+    link: "/internships",
   },
   {
     icon: <HiOutlineAcademicCap size={28} />,
@@ -29,6 +31,7 @@ const services = [
     title: "Training",
     description:
       "Professional training programs designed to make learners industry-ready and future-proof.",
+    link: "/training",
   },
   {
     icon: <HiOutlineUserGroup size={28} />,
@@ -36,6 +39,7 @@ const services = [
     title: "Placement Assistance",
     description:
       "Resume building, mock interviews, career coaching, and placement support for job seekers.",
+    link: "/career-services#placement",
   },
   {
     icon: <HiOutlineChartBar size={28} />,
@@ -43,6 +47,7 @@ const services = [
     title: "Corporate Hiring",
     description:
       "Connecting businesses with skilled professionals through streamlined hiring solutions.",
+    link: "/career-services#hiring",
   },
   {
     icon: <HiOutlineLightBulb size={28} />,
@@ -50,6 +55,7 @@ const services = [
     title: "Career Guidance",
     description:
       "Personalized mentoring and career planning to help students choose the right path.",
+    link: "/career-services#guidance",
   },
 ];
 
@@ -57,7 +63,6 @@ const CoreServices = () => {
   return (
     <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-12 bg-white">
       <div className="max-w-7xl mx-auto">
-
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -78,9 +83,9 @@ const CoreServices = () => {
           </div>
 
           <p className="mt-5 text-base sm:text-lg leading-7 sm:leading-8 text-gray-600">
-            Empowering businesses and students through consultancy,
-            internships, placement support, training programs,
-            and career development solutions.
+            Empowering businesses and students through consultancy, internships,
+            placement support, training programs, and career development
+            solutions.
           </p>
         </motion.div>
 
@@ -168,21 +173,22 @@ const CoreServices = () => {
                 {service.description}
               </p>
 
-              <button
+              <Link
+                to={service.link}
                 className="
-                  mt-auto
-                  pt-5
-                  text-orange-500
-                  font-semibold
-                  text-xs
-                  sm:text-sm
-                  hover:text-orange-600
-                  transition-all
-                  duration-300
-                "
+                            mt-auto
+                            pt-5
+                            text-orange-500
+                            font-semibold
+                            text-xs
+                            sm:text-sm
+                            hover:text-orange-600
+                            transition-all
+                            duration-300
+                        "
               >
                 Learn More →
-              </button>
+              </Link>
             </motion.div>
           ))}
         </div>
@@ -190,29 +196,28 @@ const CoreServices = () => {
         {/* Space before next section */}
 
         <div className="relative h-20 flex justify-center items-center">
-  <div
-    className="
-      absolute
-      w-[400px]
-      h-[100px]
-      bg-orange-500/15
-      blur-[80px]
-      rounded-full
-    "
-  />
+          <div
+            className="
+                        absolute
+                        w-[400px]
+                        h-[100px]
+                        bg-orange-500/15
+                        blur-[80px]
+                        rounded-full
+                        "
+          />
 
-  <div
-    className="
-      relative
-      z-10
-      w-24
-      h-1
-      bg-orange-500
-      rounded-full
-    "
-  />
-</div>
-
+          <div
+            className="
+                        relative
+                        z-10
+                        w-24
+                        h-1
+                        bg-orange-500
+                        rounded-full
+                        "
+          />
+        </div>
       </div>
     </section>
   );

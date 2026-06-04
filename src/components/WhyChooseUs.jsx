@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { HiCheckCircle } from "react-icons/hi";
 import whyChooseImage from "../assets/images/whychoose.png";
+import { useNavigate } from "react-router-dom";
 
 const WhyChooseUs = () => {
-  return (
+const navigate = useNavigate();
+    return (
     <section className="min-h-[90vh] py-20 px-6 lg:px-12 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto">
 
@@ -112,30 +114,31 @@ const WhyChooseUs = () => {
             {/* Button */}
 
             <button
-              className="
-                mt-10
-                flex
-                items-center
-                justify-center
-                bg-orange-500
-                hover:bg-orange-600
-                text-white
-                min-w-[220px]
-                h-[64px]
-                px-12
-                rounded-md
-                font-semibold
-                text-lg
-                transition-all
-                duration-300
-                hover:-translate-y-1
-                hover:scale-105
-                active:scale-95
-                hover:shadow-[0_15px_40px_rgba(249,115,22,0.35)]
-              "
-            >
-              Learn More
-            </button>
+                onClick={() => navigate("/career-services")}
+                className="
+                    mt-10
+                    flex
+                    items-center
+                    justify-center
+                    bg-orange-500
+                    hover:bg-orange-600
+                    text-white
+                    min-w-[220px]
+                    h-[64px]
+                    px-12
+                    rounded-md
+                    font-semibold
+                    text-lg
+                    transition-all
+                    duration-300
+                    hover:-translate-y-1
+                    hover:scale-105
+                    active:scale-95
+                    hover:shadow-[0_15px_40px_rgba(249,115,22,0.35)]
+                "
+                >
+                Learn More
+                </button>
 
           </motion.div>
 

@@ -278,17 +278,18 @@ setTimeout(() => {
                         onChange={handleChange}
                         placeholder="Enter your full name"
                         className="
-    w-full
-    h-14
-    px-5
-    rounded-2xl
-    border
-    border-gray-300
-    focus:border-orange-500
-    focus:outline-none
-    transition-all
-    box-border
-  "
+                                    w-full
+                                    h-14
+                                    px-5
+                                    rounded-2xl
+                                    border
+                                    border-gray-300
+                                    focus:border-orange-500
+                                    focus:outline-none
+                                    transition-all
+                                    box-border
+                                    
+                                "required
                       />
                     </div>
 
@@ -304,17 +305,18 @@ setTimeout(() => {
                         onChange={handleChange}
                         placeholder="Enter your email"
                         className="
-    w-full
-    h-14
-    px-5
-    rounded-2xl
-    border
-    border-gray-300
-    focus:border-orange-500
-    focus:outline-none
-    transition-all
-    box-border
-  "
+                                    w-full
+                                    h-14
+                                    px-5
+                                    rounded-2xl
+                                    border
+                                    border-gray-300
+                                    focus:border-orange-500
+                                    focus:outline-none
+                                    transition-all
+                                    box-border
+                            
+                        "required
                       />
                     </div>
                   </div>
@@ -332,17 +334,18 @@ setTimeout(() => {
                         onChange={handleChange}
                         placeholder="Enter phone number"
                         className="
-    w-full
-    h-14
-    px-5
-    rounded-2xl
-    border
-    border-gray-300
-    focus:border-orange-500
-    focus:outline-none
-    transition-all
-    box-border
-  "
+                                    w-full
+                                    h-14
+                                    px-5
+                                    rounded-2xl
+                                    border
+                                    border-gray-300
+                                    focus:border-orange-500
+                                    focus:outline-none
+                                    transition-all
+                                    box-border
+                                    
+                                "required
                       />
                     </div>
 
@@ -358,17 +361,18 @@ setTimeout(() => {
                         onChange={handleChange}
                         placeholder="services you are interested in"
                         className="
-    w-full
-    h-14
-    px-5
-    rounded-2xl
-    border
-    border-gray-300
-    focus:border-orange-500
-    focus:outline-none
-    transition-all
-    box-border
-  "
+                                w-full
+                                h-14
+                                px-5
+                                rounded-2xl
+                                border
+                                border-gray-300
+                                focus:border-orange-500
+                                focus:outline-none
+                                transition-all
+                                box-border
+                                
+                            "required
                       />
                     </div>
                   </div>
@@ -384,17 +388,19 @@ setTimeout(() => {
                         onChange={handleChange}
                         placeholder="company Or Organisation name"
                         className="
-    w-full
-    h-14
-    px-5
-    rounded-2xl
-    border
-    border-gray-300
-    focus:border-orange-500
-    focus:outline-none
-    transition-all
-    box-border
-  "
+                                    w-full
+                                    h-14
+                                    px-5
+                                    rounded-2xl
+                                    border
+                                    border-gray-300
+                                    focus:border-orange-500
+                                    focus:outline-none
+                                    transition-all
+                                    box-border
+                                    
+                                "
+                                required
                       />
                     </div>
                   <div>
@@ -408,17 +414,17 @@ setTimeout(() => {
                       onChange={handleChange}
                       placeholder="Write your message here..."
                       className="
-    w-full
-    px-5
-    py-4
-    rounded-2xl
-    border
-    border-gray-300
-    focus:border-orange-500
-    focus:outline-none
-    resize-none
-    box-border
-  "
+                                    w-full
+                                    px-5
+                                    py-4
+                                    rounded-2xl
+                                    border
+                                    border-gray-300
+                                    focus:border-orange-500
+                                    focus:outline-none
+                                    resize-none
+                                    box-border
+                                "
                     />
                   </div>
 
@@ -426,26 +432,26 @@ setTimeout(() => {
                     <button
                       type="submit"
                      className={`
-  text-white
-  font-semibold
-  h-14
-  min-w-[180px]
-  rounded-md
-  transition-all
-  duration-300
-  ${
-    success
-      ? "bg-green-500"
-      : "bg-orange-500 hover:bg-orange-600"
-  }
-`}
-                    >
-                     {
-  loading
-    ? "Sending..."
-    : success
-    ? "✓ Thanks For Contacting Us"
-    : "Send Message"
+                            text-white
+                            font-semibold
+                            h-14
+                            min-w-[180px]
+                            rounded-md
+                            transition-all
+                            duration-300
+                            ${
+                                success
+                                ? "bg-green-500"
+                                : "bg-orange-500 hover:bg-orange-600"
+                            }
+                            `}
+                                                >
+                                                {
+                            loading
+                                ? "Sending..."
+                                : success
+                                ? "✓ Thanks For Contacting Us"
+                                : "Send Message"
 }
                     </button>
                   </div>
