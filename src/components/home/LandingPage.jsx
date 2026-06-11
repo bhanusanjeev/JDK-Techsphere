@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { HiArrowRight } from "react-icons/hi";
-import heroImage from "../assets/images/hero.png";
-
+import heroImage from "../../assets/images/hero.png";
 const LandingPage = () => {
   const scrollToContact = () => {
     const contactSection = document.getElementById("contact");

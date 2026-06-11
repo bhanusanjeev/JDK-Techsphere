@@ -1,11 +1,15 @@
-const Consultancy = () => {
+import AboutHero from "../components/about/AboutHero";
+import WhoWeAre from "../components/about/WhoWeAre";
+import FounderMessage from "../components/about/FounderMessage";
+
+const About = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <h1 className="text-5xl font-bold">
-        Consultancy Page
-      </h1>
-    </div>
+    <>
+      <AboutHero />
+      <WhoWeAre />
+        <FounderMessage />
+    </>
   );
 };
 
-export default Consultancy;
+export default About;

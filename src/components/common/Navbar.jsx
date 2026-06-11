@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from "../../assets/images/logo.png";
 import {
   Link,
   useLocation,
@@ -23,7 +24,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Consultancy", path: "/consultancy" },
+    { name: "IT Consulting", path: "/consultancy" },
     { name: "Internships", path: "/internships" },
     { name: "Training", path: "/training" },
     { name: "About", path: "/about" },
@@ -68,36 +69,28 @@ const Navbar = () => {
         {/* Logo */}
 
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{
-            delay: 0.2,
-            duration: 0.6,
-          }}
-        >
-          <Link
-            to="/"
-            className="flex items-center gap-3"
-          >
-            <motion.div
-              whileHover={{
-                scale: 1.08,
-                rotate: 5,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 300,
-              }}
-              className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center text-white font-bold"
-            >
-              J
-            </motion.div>
-
-            <h1 className="text-2xl font-bold text-gray-900">
-              JDKTechsphere
-            </h1>
-          </Link>
-        </motion.div>
+  initial={{ opacity: 0, x: -20 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{
+    delay: 0.2,
+    duration: 0.6,
+  }}
+>
+  <Link to="/">
+    <motion.img
+      src={logo}
+      alt="JDKTechsphere"
+      whileHover={{
+        scale: 1.03,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+      }}
+      className="h-25 w-auto object-contain"
+    />
+  </Link>
+</motion.div>
 
         {/* Desktop Nav */}
 

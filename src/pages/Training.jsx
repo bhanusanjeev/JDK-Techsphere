@@ -1,11 +1,14 @@
-const Consultancy = () => {
+import TrainingHero from "../components/training/TrainingHero";
+import TrainingInfo from "../components/training/TrainingInfo";
+import AboutTrainers from "../components/training/AboutTrainers";
+const Training = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <h1 className="text-5xl font-bold">
-        Consultancy Page
-      </h1>
-    </div>
+    <>
+      <TrainingHero />
+      <TrainingInfo />
+        <AboutTrainers />
+    </>
   );
 };
 
-export default Consultancy;
+export default Training;

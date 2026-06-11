@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+
 import {
   HiOutlineMail,
   HiOutlinePhone,
   HiOutlineLocationMarker,
 } from "react-icons/hi";
-
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const ADMIN_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ADMIN;
+const USER_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_USER;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 const ContactSection = () => {
   const [formData, setFormData] = useState({
     from_name: "",
@@ -19,7 +23,6 @@ const ContactSection = () => {
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
-
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -32,20 +35,19 @@ const ContactSection = () => {
 
     try {
       setLoading(true);
-        console.log("FORM DATA:", formData);
       await emailjs.send(
-        "service_r9ha3xr",
-        "template_9jo45wb",
-        formData,
-        "smEoUER4xTeJRfm7_",
-      );
+  SERVICE_ID,
+  ADMIN_TEMPLATE_ID,
+  formData,
+  PUBLIC_KEY
+);
 
       await emailjs.send(
-        "service_r9ha3xr",
-        "template_4ctldyp",
-        formData,
-        "smEoUER4xTeJRfm7_",
-      );
+  SERVICE_ID,
+  USER_TEMPLATE_ID,
+  formData,
+  PUBLIC_KEY
+);
 
       setSuccess(true);
 
@@ -57,17 +59,11 @@ const ContactSection = () => {
   service: "",
   message: "",
 });
-
 setTimeout(() => {
   setSuccess(false);
 }, 3000);
     }catch (error) {
-  console.log("========== EMAILJS ERROR ==========");
-  console.log(error);
-
-  console.log("STATUS:", error?.status);
-  console.log("TEXT:", error?.text);
-
+  console.error("EmailJS Error:", error);
   alert(
     `Status: ${error?.status}\nMessage: ${error?.text}`
   );
@@ -165,7 +161,7 @@ setTimeout(() => {
                     Email Us
                   </h4>
 
-                  <p className="text-gray-600">info@yourinstitute.com</p>
+                  <p className="text-gray-600">info@jdktechsphere.com</p>
                 </div>
               </motion.div>
 
@@ -227,10 +223,10 @@ setTimeout(() => {
 
                 <div>
                   <h4 className="font-bold text-xl text-black mb-1">
-                    Visit Campus
+                    Visit Us
                   </h4>
 
-                  <p className="text-gray-600">Bengaluru, Karnataka, India</p>
+                  <p className="text-gray-600">Near Cambridge University, Tc palya , Bengaluru, Karnataka, India</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -433,16 +429,20 @@ setTimeout(() => {
                       type="submit"
                      className={`
                             text-white
-                            font-semibold
-                            h-14
-                            min-w-[180px]
-                            rounded-md
-                            transition-all
-                            duration-300
-                            ${
-                                success
-                                ? "bg-green-500"
-                                : "bg-orange-500 hover:bg-orange-600"
+  font-semibold
+  h-14
+  min-w-[180px]
+  rounded-md
+  transition-all
+  duration-300
+  hover:scale-105
+  active:scale-95
+  disabled:opacity-70
+  disabled:cursor-not-allowed
+  ${
+    success
+      ? "bg-green-500"
+      : "bg-orange-500 hover:bg-orange-600 hover:shadow-[0_10px_30px_rgba(249,115,22,0.3)]"
                             }
                             `}
                                                 >

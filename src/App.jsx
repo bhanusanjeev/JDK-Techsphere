@@ -8,10 +8,13 @@ import Internships from "./pages/Internships";
 import Training from "./pages/Training";
 import About from "./pages/About";
 import CareerServices from "./pages/CareerServices";
-
+import ScrollToTop from "./components/common/ScrollToTop";
+import ScrollToHash from "./components/common/ScrollToHash";
 function App() {
   return (
     <MainLayout>
+        <ScrollToTop />
+        <ScrollToHash />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/consultancy" element={<Consultancy />} />

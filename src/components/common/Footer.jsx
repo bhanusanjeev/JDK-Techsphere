@@ -1,16 +1,19 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import logo from "../../assets/images/logo.png";
+
 import {
   FaInstagram,
   FaLinkedinIn,
   FaXTwitter,
 } from "react-icons/fa6";
+
 import {
   HiOutlineMail,
   HiOutlinePhone,
   HiOutlineLocationMarker,
 } from "react-icons/hi";
-
 const Footer = () => {
   return (
    <motion.footer
@@ -37,34 +40,29 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-6">
 
              <motion.div
-                    whileHover={{
-                        scale: 1.08,
-                        rotate: 5,
-                    }}
-                    transition={{
-                        type: "spring",
-                        stiffness: 300,
-                    }}
-                    className="
-                        w-12
-                        h-12
-                        bg-orange-500
-                        rounded-xl
-                        flex
-                        items-center
-                        justify-center
-                        text-white
-                        font-bold
-                        text-xl
-                    "
-                    >
-                    J
-            </motion.div>
-
-              <h2 className="text-2xl font-bold text-black">
-                JDKTechsphere
-              </h2>
-
+  initial={{ opacity: 0, x: -20 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{
+    delay: 0.2,
+    duration: 0.6,
+  }}
+>
+  <Link to="/">
+    <motion.img
+      src={logo}
+      alt="JDKTechsphere"
+      whileHover={{
+        scale: 1.03,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+      }}
+      className="h-25 w-auto object-contain"
+    />
+  </Link>
+</motion.div>
+             
             </div>
 
             <p className="text-gray-600 leading-8 max-w-md">
@@ -77,35 +75,51 @@ const Footer = () => {
 
           {/* CENTER */}
 
-          <div className="flex flex-col gap-4 text-gray-600">
+         <div className="flex flex-col gap-4 text-gray-600">
 
-  <a href="/" className="hover:text-orange-500 hover:translate-x-2 transition-all duration-300 inline-block">
+  <Link
+    to="/"
+    className="hover:text-orange-500 hover:translate-x-2 transition-all duration-300 inline-block"
+  >
     Home
-  </a>
+  </Link>
 
-  <a href="/consultancy" className="hover:text-orange-500 hover:translate-x-2 transition-all duration-300 inline-block">
+  <Link
+    to="/consultancy"
+    className="hover:text-orange-500 hover:translate-x-2 transition-all duration-300 inline-block"
+  >
     Consultancy
-  </a>
+  </Link>
 
-  <a href="/internships" className="hover:text-orange-500 hover:translate-x-2 transition-all duration-300 inline-block">
+  <Link
+    to="/internships"
+    className="hover:text-orange-500 hover:translate-x-2 transition-all duration-300 inline-block"
+  >
     Internships
-  </a>
+  </Link>
 
-  <a href="/training" className="hover:text-orange-500 hover:translate-x-2 transition-all duration-300 inline-block">
+  <Link
+    to="/training"
+    className="hover:text-orange-500 hover:translate-x-2 transition-all duration-300 inline-block"
+  >
     Training
-  </a>
+  </Link>
 
-  <a href="/about" className="hover:text-orange-500 hover:translate-x-2 transition-all duration-300 inline-block">
+  <Link
+    to="/about"
+    className="hover:text-orange-500 hover:translate-x-2 transition-all duration-300 inline-block"
+  >
     About
-  </a>
+  </Link>
 
- <HashLink
-  smooth
-  to="/#contact"
-  className="hover:text-orange-500 hover:translate-x-2 transition-all duration-300 inline-block"
->
-  Contact
-</HashLink>
+  <HashLink
+    smooth
+    to="/#contact"
+    className="hover:text-orange-500 hover:translate-x-2 transition-all duration-300 inline-block"
+  >
+    Contact
+  </HashLink>
+
 </div>
           {/* RIGHT */}
 

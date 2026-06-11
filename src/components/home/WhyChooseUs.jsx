@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { HiCheckCircle } from "react-icons/hi";
-import whyChooseImage from "../assets/images/whychoose.png";
+import whyChooseImage from "../../assets/images/whychoose.png";
 import { useNavigate } from "react-router-dom";
 
 const WhyChooseUs = () => {

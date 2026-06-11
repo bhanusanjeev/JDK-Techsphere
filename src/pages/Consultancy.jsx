@@ -1,10 +1,11 @@
+import ConsultancyHero from "../components/consultancy/ConsultancyHero";
+import HiringProcess from "../components/consultancy/HiringProcess";
 const Consultancy = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <h1 className="text-5xl font-bold">
-        Consultancy Page
-      </h1>
-    </div>
+    <>
+      <ConsultancyHero />
+       <HiringProcess />
+    </>
   );
 };
 

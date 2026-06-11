@@ -1,7 +1,7 @@
-import LandingPage from "../components/LandingPage";
-import CoreServices from "../components/CoreServices";
-import WhyChooseUs from "../components/WhyChooseUs";
-import ContactSection from "../components/ContactSection";
+import LandingPage from "../components/home/LandingPage";
+import CoreServices from "../components/home/CoreServices";
+import WhyChooseUs from "../components/home/WhyChooseUs";
+import ContactSection from "../components/home/ContactSection";
 
 const Home = () => {
   return (

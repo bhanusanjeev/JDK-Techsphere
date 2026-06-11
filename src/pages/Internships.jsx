@@ -1,11 +1,15 @@
-const Consultancy = () => {
+import InternshipHero from "../components/internships/InternshipHero";
+import InternshipCategories from "../components/internships/InternshipCategories";
+import InternshipCertification from "../components/internships/InternshipCertification";
+const Internship = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <h1 className="text-5xl font-bold">
-        Consultancy Page
-      </h1>
-    </div>
+    <>
+      <InternshipHero />
+      <InternshipCategories />
+      <InternshipCertification />
+
+    </>
   );
 };
 
-export default Consultancy;
+export default Internship;

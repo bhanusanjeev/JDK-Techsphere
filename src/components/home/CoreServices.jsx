@@ -12,7 +12,7 @@ const services = [
   {
     icon: <HiOutlineOfficeBuilding size={28} />,
     badge: "BUSINESS SOLUTIONS",
-    title: "Consultancy",
+    title: "Consulting",
     description:
       "Helping organizations hire the right talent through strategic workforce solutions and expert consulting.",
     link: "/consultancy",
