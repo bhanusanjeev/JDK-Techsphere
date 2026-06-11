@@ -64,16 +64,14 @@ setTimeout(() => {
 }, 3000);
     }
     catch (error) {
-  console.error("FULL ERROR:", error);
-
-  console.log("PUBLIC_KEY:", PUBLIC_KEY);
-  console.log("SERVICE_ID:", SERVICE_ID);
-  console.log("ADMIN_TEMPLATE_ID:", ADMIN_TEMPLATE_ID);
-  console.log("USER_TEMPLATE_ID:", USER_TEMPLATE_ID);
-
-  alert(JSON.stringify(error, null, 2));
-}
-}
+  console.error("EmailJS Error:", error);
+  alert(
+    `Status: ${error?.status}\nMessage: ${error?.text}`
+  );
+}finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section
